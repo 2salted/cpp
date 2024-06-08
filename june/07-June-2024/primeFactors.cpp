@@ -2,22 +2,25 @@
 #include <iostream>
 
 int main() {
-  int number, i;
+  int num, i;
   std::cout << "Enter a number: ";
-  std::cin >> number;
-  i = number;
+  std::cin >> num;
+  i = num;
 
   while (i != 0) {
-    if (number % i == 0) {
-      int maxDivisor = sqrt(number);
+    if (num % i == 0) {
+      int maxDivisor = sqrt(i);
+      bool isPrime = true;
 
-      for (int i = 2; i <= maxDivisor; ++i) {
-        if (number % i == 0) {
-          std::cout << number << " is not a prime number";
-          return 0;
+      for (int j = 2; j <= maxDivisor; ++j) {
+        if (i % j == 0) {
+          isPrime = false;
         }
       }
-      std::cout << i << '\n';
+      if (isPrime) {
+        std::cout << i << std::endl;
+      }
+      return 0;
     }
     --i;
   }
