@@ -20,8 +20,8 @@ int main() {
       if (isPrime) {
         std::cout << i << std::endl;
       }
-      return 0;
     }
     --i;
   }
+  return 0;
 }
