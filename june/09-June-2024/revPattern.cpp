@@ -6,7 +6,7 @@ int main() {
   std::cin >> rows;
 
   for (int i = rows; 0 < i; --i) {
-    for (int j = rows; 0 < j; --j) {
+    for (int j = i; 0 < j; --j) {
       std::cout << '*';
     }
     std::cout << '\n';
