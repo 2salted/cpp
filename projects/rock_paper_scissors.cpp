@@ -32,9 +32,9 @@ int main() {
   if (userInput == botChoice) {
     std::cout << "Tie!" << std::endl;
     return 0;
-  } else if (userInput == "rock" && botChoice == "scissors" ||
-             userInput == "paper" && botChoice == "rock" ||
-             userInput == "scissors" && botChoice == "paper") {
+  } else if ((userInput == "rock" && botChoice == "scissors") ||
+             (userInput == "paper" && botChoice == "rock") ||
+             (userInput == "scissors" && botChoice == "paper")) {
     std::cout << "Player A wins!" << std::endl;
     return 0;
   } else {
