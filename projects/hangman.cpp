@@ -44,7 +44,7 @@ int main() {
       FoundLetters += " __ ";
     }
   }
-  std::cout << "\n Found letters: " << FoundLetters << "\n";
 
+  std::cout << "\n Found letters: " << FoundLetters << "\n";
   return 0;
 }
