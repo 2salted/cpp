@@ -1,6 +1,16 @@
 #include <iostream>
 #include <string>
 
+bool isPalindrome(const std::string &);
+
+int main() {
+  std::string string;
+  std::cout << "Enter a string to check for Palindrome: ";
+  std::cin >> string;
+  isPalindrome(string);
+  return 0;
+}
+
 bool isPalindrome(const std::string &strToCheck) {
   std::string revStr;
   bool isPalindrome = false;
@@ -13,12 +23,4 @@ bool isPalindrome(const std::string &strToCheck) {
   }
   std::cout << strToCheck << " is not a Palindrome" << std::endl;
   return isPalindrome;
-}
-
-int main() {
-  std::string string;
-  std::cout << "Enter a string to check for Palindrome: ";
-  std::cin >> string;
-  isPalindrome(string);
-  return 0;
 }
