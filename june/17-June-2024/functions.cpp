@@ -16,6 +16,9 @@ bool isPalindrome(const std::string &strToCheck) {
 }
 
 int main() {
-  isPalindrome("juhhu");
+  std::string string;
+  std::cout << "Enter a string to check for Palindrome: ";
+  std::cin >> string;
+  isPalindrome(string);
   return 0;
 }
