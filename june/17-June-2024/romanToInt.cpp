@@ -5,7 +5,8 @@ using std::cout;
 using std::string;
 
 // example: XII
-int romanToInt(const string &romanNum) {
+int romanToInt(string &romanNum) {
+  romanNum = " " + romanNum;
   int integer = 0;
   for (int i = 1; i < romanNum.size(); ++i) {
     if (romanNum[i] == 'V' && romanNum[i - 1] == 'I') {
