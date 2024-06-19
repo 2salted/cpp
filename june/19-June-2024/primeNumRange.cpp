@@ -22,7 +22,6 @@ int main() {
   cin >> startingNum;
   cout << "Enter an ending number: ";
   cin >> endingNum;
-  cout << "\n";
   for (unsigned int i = startingNum; i < endingNum; ++i) {
     if (isPrime(i)) {
       cout << i << ", ";
