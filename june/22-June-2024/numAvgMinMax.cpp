@@ -6,7 +6,7 @@ using namespace std;
 
 int average(const vector<int> &x) {
   int sum = 0, count, averageNum;
-  for (unsigned int i = 0; i < x.size(); ++i) {
+  for (unsigned int i = 1; i <= x.size(); ++i) {
     sum += x[i];
     count = i;
   }
