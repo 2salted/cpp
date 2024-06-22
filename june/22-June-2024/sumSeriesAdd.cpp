@@ -8,4 +8,9 @@ using std::endl;
 int main() {
   unsigned int nth, sum = 0;
   cout << "Enter the nth term: ";
+  cin >> nth;
+  for (unsigned int i = 0; i < nth; ++i) {
+    sum += nth + i;
+  }
+  cout << sum << endl;
 }
