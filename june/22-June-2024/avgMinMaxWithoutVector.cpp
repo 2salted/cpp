@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-  int num, sum = 0, count = 0, max = 0, min = 0;
-  double average;
+  int num, count = 0, max = 0, min = 0;
+  double average, sum = 0;
   cout << "Average, Maximum and Minimum Calculator for positive integers: \n";
   while (num != 0 - 1) {
     cin >> num;
