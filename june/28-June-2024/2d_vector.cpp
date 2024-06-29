@@ -23,4 +23,5 @@ int main() {
       cin >> mat[i][j];
     }
   }
+  return 0;
 }
