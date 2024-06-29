@@ -32,6 +32,8 @@ int main() {
       if (arr[i][left] != arr[i][right]) {
         isPalindrome = false;
       }
+      ++left;
+      --right;
     }
     if (isPalindrome) {
       cout << i << " R";
@@ -46,9 +48,11 @@ int main() {
       if (arr[left][i] != arr[right][i]) {
         isPalindrome = false;
       }
+      ++left;
+      --right;
     }
     if (isPalindrome) {
-      cout << i << " R";
+      cout << i << " C";
       return 0;
     }
   }
