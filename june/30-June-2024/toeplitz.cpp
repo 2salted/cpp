@@ -4,6 +4,7 @@
 
 using std::cin;
 using std::cout;
+using std::endl;
 using std::vector;
 using u32 = uint32_t;
 using usize = size_t;
@@ -24,4 +25,15 @@ int main() {
       cin >> arr[i][j];
     }
   }
+
+  for (uint32_t i = 0; i < arr.size() - 1; ++i) {
+    for (uint32_t j = 0; j < arr[0].size() - 1; ++j) {
+      if (arr[i][j] != arr[i + 1][j + 1]) {
+        cout << "This is not a toeplitz";
+        return 0;
+      }
+    }
+  }
+  cout << "This is a toeplitz" << endl;
+  return 0;
 }
