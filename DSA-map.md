@@ -1,3 +1,5 @@
+# DSA Roadmap
+
 ## Data Structures
 
 ### Essential (mostly)
@@ -78,6 +80,18 @@
 - Search
   - Linear Search
   - Binary Search
+- Sorting
+  - Bubble sort
+  - Insertion sort
+  - Selection sort
+  - Merge sort
+  - Quick sort
+  - Counting sort
+  - Radix Sorting
+    - LSD Radix sort
+    - MSD Radix sort
+  - Tim sort
+  - Stable vs unstable sort
 - Tree traversal algorithms
   - Pre order
     - Recursive
@@ -105,16 +119,24 @@
   - A\*
   - Dijkstra's algorithm
   - Bellman Ford
+- Flood fill algorithm
+- Graph coloring algorithm
 - Union Find
 - Minimum Spanning Tree finding algorithms
   - Prim's algorithm
   - Kruskal's algorithm
 
-### Advanced Algorithmic Concepts
+### Advanced Algorithmic Concepts & Techniques
 
+- Two pointer
+- Sliding window
+- Bit Manipulation
+- Greedy Algorithms
+- Prefix sum
 - Memoization and caching
   - Top Down
   - Bottom Up
 - Dynamic programming
   - Top Down
   - Bottom Up
+- Math
