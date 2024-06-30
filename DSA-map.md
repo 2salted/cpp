@@ -29,9 +29,9 @@
     - Always growing implementation
     - Ring Buffer implementation
   - Linked List based implementations
-  - Singly Linked List based implementation
-  - Doubly Linked List based implementation
-  - Cyclic Linked List based implementation
+    - Singly Linked List based implementation
+    - Doubly Linked List based implementation
+    - Cyclic Linked List based implementation
   - Monotonic deque
 - Binary Tree
   - Binary Search Tree (BST)
