@@ -6,9 +6,16 @@ using std::string;
 using int32 = int32_t;
 using usize = size_t;
 
-ArrayList::ArrayList() : data(new int[16]), size(0), capacity(16) {}
-ArrayList::ArrayList(usize size)
-    : data(new int32[size]), size(size), capacity(size) {}
+ArrayList::ArrayList() {
+  data = new int[16];
+  size = 0;
+  capacity = 16;
+}
+ArrayList::ArrayList(usize size) {
+  data = new int[size];
+  size = 0;
+  capacity = size;
+}
 ArrayList::ArrayList(usize size, int32 val)
     : data(new int32[size]), size(size), capacity(size) {
   for (usize i = 0; i < size; i++) {
