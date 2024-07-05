@@ -57,7 +57,18 @@ int get(ListNode *const list, size_t index) {
   return get(list->next, index - 1);
 }
 
-int insert(ListNode *list, size_t index, int val);
+int insert(ListNode *list, size_t index, int val) {
+  if (list == nullptr) {
+    throw std::invalid_argument("List index out of bounds");
+  }
+
+  if (index == 1) {
+    list->next = new ListNode{val, list->next};
+    return val;
+  }
+
+  return insert(list->next, index - 1, val);
+}
 
 int main() {
   ListNode *list = appendLeft(appendLeft(nullptr, 2), 1);
