@@ -44,7 +44,26 @@ void insert(listNode *list, size_t index, int val) {
   insert(list->next, index - 1, val);
 }
 
+int length(listNode *list) {
+  if (list == nullptr) {
+    return 0;
+  }
+  return length(list->next) + 1;
+}
+
+int search(listNode *list, int element) {
+  if (list == nullptr) {
+    return -1;
+  }
+  if (list->val != element) {
+    int searching = search(list->next, element);
+    return searching == -1 ? -1 : searching + 1;
+  } else {
+    return 0;
+  }
+}
+
 int main() {
   listNode *list = new listNode{1, new listNode{2, new listNode{3, nullptr}}};
-  printList(list);
+  cout << search(list, 10);
 }
