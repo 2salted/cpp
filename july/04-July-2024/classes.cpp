@@ -17,10 +17,15 @@ public:
     delete[] arr;
     arr = newArr;
   }
+
+  void join(const arrayList &secondArr) {}
+
+  ~arrayList() { delete[] arr; }
 };
 
 int main() {
-  arrayList a;
+  arrayList a, b;
   a.resize(10);
+  b.join(a);
   return 0;
 }
