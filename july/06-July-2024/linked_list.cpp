@@ -105,6 +105,15 @@ ListNode *slice(ListNode *list, size_t start, size_t end) {
   return res;
 }
 
+ListNode *reverse(ListNode *list) {
+  if (list == nullptr) {
+    return nullptr;
+  }
+  ListNode *next = list->next;
+  list->next = nullptr;
+  return join(reverse(next), list);
+}
+
 int main() {
   ListNode *list = appendLeft(appendLeft(nullptr, 2), 1);
   printList(list); // 1 2 3
@@ -112,6 +121,6 @@ int main() {
   list = append(list, 4);
   printList(list); // 1 2 3 4
   cout << '\n';
-  printList(slice(list, 1, 3)); // 2 3
+  printList(reverse(slice(list, 1, 3))); // 2 3
   return 0;
 }
