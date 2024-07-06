@@ -34,9 +34,6 @@ void insert(listNode *list, size_t index, int val) {
     cout << "returned 0";
     return;
   }
-  if (index == 0) {
-    return;
-  }
   if (index == 1) {
     list->next = new listNode{val, list->next};
     return;
@@ -63,7 +60,25 @@ int search(listNode *list, int element) {
   }
 }
 
+listNode *skip(listNode *list, int nth) {
+  if (list == nullptr) {
+    return nullptr;
+  }
+  if (nth == 0) {
+    return list;
+  }
+  return skip(list->next, nth - 1);
+}
+
 int main() {
-  listNode *list = new listNode{1, new listNode{2, new listNode{3, nullptr}}};
-  cout << search(list, 10);
+  listNode *list = new listNode{
+      1,
+      new listNode{
+          2, new listNode{
+                 3, new listNode{
+                        4, new listNode{
+                               5, new listNode{
+                                      6, new listNode{
+                                             7, new listNode{8, nullptr}}}}}}}};
+  printList(skip(list, 3));
 }
