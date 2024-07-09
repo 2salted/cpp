@@ -16,22 +16,21 @@ void printList(ListNode *head) {
 }
 
 ListNode *deleteDuplicates(ListNode *head) {
-  // needs fixing
   if (head == nullptr) {
     return nullptr;
   }
   if (head->next == nullptr) {
     return head;
   }
-  if (head->next->val > head->val) {
-    printList(head);
+  deleteDuplicates(head->next);
+  if (head->val == head->next->val) {
+    head->next = head->next->next;
   }
-  return deleteDuplicates(head->next);
+  return head;
 }
 
 int main() {
   ListNode *list = new ListNode{
-      1, new ListNode{
-             1, new ListNode{2, new ListNode{3, new ListNode{3, nullptr}}}}};
-  deleteDuplicates(list);
+      1, new ListNode{1, new ListNode{2, new ListNode{2, nullptr}}}};
+  printList(deleteDuplicates(list));
 }
