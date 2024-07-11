@@ -36,7 +36,8 @@ bool is_palindrome(ListNode *list) {
 }
 
 int main() {
-  ListNode *list = new ListNode{1, new ListNode{2, new ListNode{1, nullptr}}};
+  ListNode *list = new ListNode{
+      1, new ListNode{2, new ListNode{2, new ListNode{1, nullptr}}}};
   if (is_palindrome(list)) {
     std::cout << "The list is a palindrome" << std::endl;
   } else {
