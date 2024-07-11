@@ -5,7 +5,7 @@ using std::endl;
 using std::vector;
 
 bool palindrome(const vector<int> &arr, int left, int right) {
-  if (left == right) {
+  if (left >= right) {
     return true;
   }
   if (arr[left] != arr[right]) {
@@ -15,7 +15,7 @@ bool palindrome(const vector<int> &arr, int left, int right) {
 }
 
 int main() {
-  vector<int> arr = {1, 2, 3, 3, 2, 1};
+  vector<int> arr = {1, 2, 3, 2, 1};
   unsigned int left = 0, right = arr.size() - 1;
   if (palindrome(arr, left, right)) {
     cout << "is a palindrome" << endl;
