@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <iostream>
+#include <utility>
 #include <vector>
 class DoublyLinkedList {
 public:
@@ -35,6 +36,15 @@ DoublyLinkedList *make_doubly_linked_list(std::vector<int32_t> const &items) {
     head = head->prev;
   }
   return head;
+}
+
+void reverse(DoublyLinkedList *list) {
+  if (list == nullptr) {
+    return;
+  }
+
+  reverse(list->next);
+  std::swap(list->next, list->prev);
 }
 
 void printList(DoublyLinkedList *list) {
