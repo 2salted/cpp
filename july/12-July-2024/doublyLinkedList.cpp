@@ -39,16 +39,6 @@ DoublyLinkedList *make_doubly_linked_list(std::vector<int32_t> const &items) {
   return head;
 }
 
-DoublyLinkedList *joinRec(DoublyLinkedList *list1, DoublyLinkedList *list2) {
-  if (list1->next == nullptr && list2 != nullptr) {
-    list1->next = list2;
-    list2->prev = list1;
-    return list1;
-  }
-  joinRec(list1->next, list2);
-  return list1;
-}
-
 void printList(DoublyLinkedList *list) {
   while (list != nullptr) {
     std::cout << list->val << "<->";
@@ -67,6 +57,16 @@ int length(DoublyLinkedList *list) {
   return count;
 }
 
+DoublyLinkedList *joinRec(DoublyLinkedList *list1, DoublyLinkedList *list2) {
+  if (list1->next == nullptr && list2 != nullptr) {
+    list1->next = list2;
+    list2->prev = list1;
+    return list1;
+  }
+  joinRec(list1->next, list2);
+  return list1;
+}
+
 void join(DoublyLinkedList *list1, DoublyLinkedList *list2) {
   while (list1->next != nullptr && list2 != nullptr) {
     list1 = list1->next;
@@ -75,10 +75,9 @@ void join(DoublyLinkedList *list1, DoublyLinkedList *list2) {
   list2->prev = list1;
 }
 
+void reverseHalf(DoublyLinkedList *list) {}
+
 int main() {
-  DoublyLinkedList *list1 = make_doubly_linked_list({0, 1, 2, 3, 4, 5});
-  DoublyLinkedList *list2 = make_doubly_linked_list({6, 7, 8});
-  join(list1, list2);
-  printList(list1);
+  DoublyLinkedList *list = make_doubly_linked_list({0, 1, 2, 3, 4, 5});
   return 0;
 }
