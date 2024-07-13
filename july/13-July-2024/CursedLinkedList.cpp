@@ -18,6 +18,7 @@ void append(CursedLinkedList &list, int32_t val) {
     list.head = 0;
     list.vals.push_back(val);
     list.nexts.push_back(-1);
+    return;
   }
   list.vals.push_back(val);
   list.nexts.push_back(-1);
