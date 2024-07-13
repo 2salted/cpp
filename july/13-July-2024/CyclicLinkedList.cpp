@@ -36,6 +36,32 @@ bool has_cycle(ListNode *list) {
   return false;
 }
 
+ListNode *get_cycle(ListNode *list) {
+  ListNode *slow = list;
+  ListNode *fast = list;
+
+  while (fast != nullptr && fast->next != nullptr) {
+    slow = slow->next;
+    fast = fast->next->next;
+
+    if (slow == fast) {
+      break;
+    }
+  }
+
+  if (fast == nullptr || fast->next == nullptr) {
+    return nullptr;
+  }
+
+  slow = list;
+  while (slow != fast) {
+    slow = slow->next;
+    fast = fast->next;
+  }
+
+  return slow;
+}
+
 void create_cycle(ListNode *list, int32_t pos) {
   if (list == nullptr) {
     return;
