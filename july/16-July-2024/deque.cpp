@@ -12,15 +12,26 @@ ListNode *appendRightHelper(ListNode *list, int val) {
   return list;
 }
 
-int popLeftHelper(ListNode *list, int val) {
-  if (list == nullptr) {
-    return -1;
+int popRightHelper(ListNode *&list, int val) {
+  while (list->next != nullptr) {
+    list = list->next;
   }
-  int curryVal = list->val;
+  int value = list->val;
   ListNode *newList = list->next;
   delete list;
   list = newList;
-  return curryVal;
+  return value;
+}
+
+int popLeftHelper(ListNode *&list, int val) {
+  if (list == nullptr) {
+    return -1;
+  }
+  int currVal = list->val;
+  ListNode *newList = list->next;
+  delete list;
+  list = newList;
+  return currVal;
 }
 
 class deque {
@@ -30,5 +41,6 @@ private:
 public:
   void appendRight(int val) { list = appendRightHelper(list, val); }
   void appendLeft(int val) { list = new ListNode{val, list}; }
-  void popLeft() { popLeftHelper(list, list->val); }
+  int popLeft() { return popLeftHelper(list, list->val); }
+  int popRight() { return popRightHelper(list, list->val); }
 };
