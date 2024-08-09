@@ -4,19 +4,6 @@ using namespace std;
 
 class Solution {
 public:
-  int digitNum(vector<int> const &arr) {
-    int digitCount = 0;
-    int testNum = 0;
-    for (int i = arr.size() - 1; 0 <= i; --i) {
-      testNum = arr[i];
-      while (testNum != 0) {
-        testNum /= 10;
-        ++digitCount;
-      }
-    }
-    return digitCount;
-  }
-
   int reverseSecondHalf(vector<int> const &arr) {
     int res = 0;
     int testNum = 0;
@@ -32,7 +19,14 @@ public:
     return res;
   }
 
-  bool isPalindrome(vector<int> const &arr) { return false; }
+  int useFirstHalf(vector<int> const &arr) {
+    int res = 0;
+    int testNum = 0;
+    for (int i = arr.size() / 2;) {
+    }
+  }
+
+  bool isPalindrome(vector<int> const &arr) {}
 };
 
 int main() {
