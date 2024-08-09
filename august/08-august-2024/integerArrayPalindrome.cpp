@@ -17,11 +17,27 @@ public:
     return digitCount;
   }
 
-  vector<int> isPalindrome(vector<int> &arr) { return arr; }
+  bool isPalindrome(vector<int> const &arr) {
+    int firstNum = 0;
+    int secondNum = 0;
+    for (int i = 0; i < digitNum(arr) / 2; ++i) {
+    }
+    cout << firstNum;
+    return false;
+    // for (int i = arr.size() - 1; digitNum(arr) / 2 <= i; --i) {
+    // }
+  }
 };
 
 int main() {
   Solution s;
-  cout << s.digitNum({12, 243, 21});
+  s.isPalindrome({12, 23, 2, 21});
   return 0;
 }
+//
+//
+//
+//
+//
+//
+//
